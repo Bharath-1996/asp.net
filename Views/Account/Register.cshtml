@@ -1,0 +1,76 @@
+﻿ @model WebApplication5.Models.UserModel
+@{
+    ViewBag.Title = "Register";
+}
+
+    <fieldset>
+        <legend>Register</legend>
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post)) 
+        {
+    <table>
+        <tr>
+            <td>@Html.LabelFor(model => model.FirstName)</td>
+            <td>@Html.TextBoxFor(model => model.FirstName)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="2">
+                @Html.ValidationMessageFor(model => model.FirstName, null, new { @class = "text text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.LastName)</td>
+            <td>@Html.TextBoxFor(model => model.LastName)</td>
+        </tr>
+        <td></td>
+        <td colspan="2">
+            @Html.ValidationMessageFor(model => model.LastName, null, new { @class = "text text-danger" })
+        </td>
+        <tr>
+            <td>@Html.LabelFor(model => model.Email)</td>
+            <td>@Html.TextBoxFor(model => model.Email)</td>
+        </tr>
+        <td></td>
+        <td colspan="2">
+            @Html.ValidationMessageFor(model => model.Email, null, new { @class = "text text-danger" })
+        </td>
+        <tr>
+            <td>@Html.LabelFor(model => model.Password)</td>
+            <td>@Html.TextBoxFor(model => model.Password)</td>
+        </tr>
+        <td></td>
+        <td colspan="2">
+            @Html.ValidationMessageFor(model => model.Password, null, new { @class = "text text-danger" })
+        </td>
+        <tr>
+            <td>@Html.LabelFor(model => model.Confirmpassword)</td>
+            <td>@Html.TextBoxFor(model => model.Confirmpassword)</td>
+        </tr>
+        <td></td>
+        <td colspan="2">
+            @Html.ValidationMessageFor(model => model.Confirmpassword, null, new { @class = "text text-danger" })
+        </td>
+        <tr>
+            <td></td>
+            <td>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Register" />
+                        </td>
+                        <td>
+                            <input type="reset" value="Reset" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.LabelFor(model => model.message,null,new {@class="alert alert-success"})
+            </td>
+        </tr>
+    </table>
+        }
+    </fieldset>
+

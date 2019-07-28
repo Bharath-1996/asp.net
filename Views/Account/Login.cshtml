@@ -1,0 +1,49 @@
+﻿@model WebApplication5.Models.LoginModel
+@{
+    ViewBag.Title = "Login";
+}
+
+<fieldset>
+    <legend>Register</legend>
+    @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+    {
+<table>
+    <tr>
+        <td>@Html.LabelFor(LoginModel => LoginModel.Email)</td>
+        <td>@Html.TextBoxFor(LoginModel => LoginModel.Email)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="2">
+            @Html.ValidationMessageFor(LoginModel => LoginModel.Email, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(LoginModel => LoginModel.password)</td>
+        <td>@Html.TextBoxFor(LoginModel => LoginModel.password)</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td colspan="2">
+            @Html.ValidationMessageFor(LoginModel => LoginModel.password, null, new { @class = "text text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        <input type="submit" value="Login" />
+                    </td>
+                    <td>
+                        <input type="reset" value="Reset" />
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+</table>
+   }
+</fieldset>
